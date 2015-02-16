@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="test">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    </head>
+
+    <body>
+        <div>
+            <angular-performance-stats></angular-performance-stats>
+            {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
+            <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>
+            {% } %}
+        </div>
+    </body>
+
+</html>
