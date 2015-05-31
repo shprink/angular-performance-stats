@@ -1,6 +1,6 @@
 /**
  * angular-performance-stats - Angular performance Stats displays your AngularJS app performance activity
- * @version v0.1.0
+ * @version v0.1.1
  * @author shprink <contact@julienrenaux.fr>
  * @link https://github.com/shprink/angular-performance-stats
  * @license MIT
@@ -80,9 +80,9 @@
 	          $log.info('angular-performance-stats disabled');
 	          return;
 	        }
-	        __webpack_require__(3);
+	        __webpack_require__(4);
 	        body = $document.find('body');
-	        el = angular.element(__webpack_require__(5));
+	        el = angular.element(__webpack_require__(3));
 	        body.prepend(el);
 	        libStats = new libStats();
 	        update = function() {
@@ -277,10 +277,16 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = "<nav id=\"angular-performance-stats\">\n    <ul>\n        <li class=\"divider-vertical\"></li>\n        <li>\n            <memory-stats></memory-stats>\n        </li>\n        <li class=\"divider-vertical\"></li>\n        <li>\n            <fps-stats></fps-stats>\n        </li>\n        <li class=\"divider-vertical\"></li>\n        <li>\n            <ms-stats></ms-stats>\n        </li>\n        <li class=\"divider-vertical\"></li>\n        <li>\n            <watchers-count></watchers-count>\n        </li>\n    </ul>\n</nav>\n";
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(4);
+	var content = __webpack_require__(5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -300,17 +306,11 @@
 	}
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(7)();
 	exports.push([module.id, "nav#angular-performance-stats {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-flex-wrap: wrap;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n  color: white;\n  background-color: #607d8b; }\n  nav#angular-performance-stats ul {\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n    nav#angular-performance-stats ul li {\n      padding: .5em;\n      color: #FFF;\n      text-transform: uppercase;\n      font-weight: 600;\n      display: inline-block;\n      padding-right: 5px;\n      padding-left: 5px;\n      line-height: 20px; }\n      nav#angular-performance-stats ul li.divider-vertical {\n        padding: 0;\n        margin: 0 9px;\n        border-right: 1px solid #fff;\n        border-left: 1px solid #f2f2f2; }\n", ""]);
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<nav id=\"angular-performance-stats\">\n    <ul>\n        <li class=\"divider-vertical\"></li>\n        <li>\n            <memory-stats></memory-stats>\n        </li>\n        <li class=\"divider-vertical\"></li>\n        <li>\n            <fps-stats></fps-stats>\n        </li>\n        <li class=\"divider-vertical\"></li>\n        <li>\n            <ms-stats></ms-stats>\n        </li>\n        <li class=\"divider-vertical\"></li>\n        <li>\n            <watchers-count></watchers-count>\n        </li>\n    </ul>\n</nav>\n";
 
 /***/ },
 /* 6 */

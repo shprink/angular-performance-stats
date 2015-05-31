@@ -1,6 +1,6 @@
 {
   "name": "angular-performance-stats",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Angular performance Stats displays your AngularJS app performance activity",
   "main": "./dist/angular-performance-stats.js",
   "scripts": {
