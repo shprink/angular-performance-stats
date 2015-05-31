@@ -1,45 +1,51 @@
 {
-    "name": "angular-performance-stats",
-    "version": "1.0.0-rc4",
-    "description": "Angular performance Stats displays your app performance activity",
-    "main": "./dist/angular-performance-stats.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "angular",
-        "angularjs",
-        "memory",
-        "performance",
-        "statistics",
-        "stats"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/livingobjects/angular-memory-stats.git"
-    },
-    "author": "shprink <contact@julienrenaux.fr>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/livingobjects/angular-memory-stats/issues"
-    },
-    "homepage": "https://github.com/livingobjects/angular-memory-stats",
-    "devDependencies": {
-        "angular": "^1.3.12",
-        "clone": "^0.2.0",
-        "coffee-loader": "^0.7.2",
-        "coffee-script": "^1.9.0",
-        "exports-loader": "^0.6.2",
-        "expose-loader": "^0.6.0",
-        "gulp": "^3.8.10",
-        "gulp-header": "^1.2.2",
-        "gulp-webpack": "^1.2.0",
-        "html-webpack-plugin": "^1.1.0",
-        "ng-annotate-webpack-plugin": "^0.1.2",
-        "path": "^0.11.14",
-        "webpack": "^1.5.3"
-    },
-    "dependencies": {
-        "requestanimationframe": "0.0.22"
-    }
+  "name": "angular-performance-stats",
+  "version": "0.1.0",
+  "description": "Angular performance Stats displays your AngularJS app performance activity",
+  "main": "./dist/angular-performance-stats.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "memory",
+    "performance",
+    "statistics",
+    "stats"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:shprink/angular-performance-stats.git"
+  },
+  "author": "shprink <contact@julienrenaux.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shprink/angular-performance-stats/issues"
+  },
+  "homepage": "https://github.com/shprink/angular-performance-stats",
+  "devDependencies": {
+    "angular": "^1.3.12",
+    "autoprefixer-loader": "^2.0.0",
+    "clone": "^0.2.0",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.0",
+    "css-loader": "^0.14.4",
+    "exports-loader": "^0.6.2",
+    "expose-loader": "^0.6.0",
+    "gulp": "^3.8.10",
+    "gulp-header": "^1.2.2",
+    "gulp-webpack": "^1.2.0",
+    "html-loader": "^0.3.0",
+    "html-webpack-plugin": "^1.1.0",
+    "ng-annotate-webpack-plugin": "^0.1.2",
+    "node-sass": "^3.1.2",
+    "path": "^0.11.14",
+    "sass-loader": "^1.0.2",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.5.3"
+  },
+  "dependencies": {
+    "requestanimationframe": "0.0.22"
+  }
 }

@@ -17,6 +17,12 @@ module.exports = {
         }, {
             test: /\.coffee$/,
             loader: "coffee"
+        }, {
+            test: /\.html$/,
+            loader: "html"
+        }, {
+            test: /\.scss$/,
+            loader: "style!css!autoprefixer!sass"
         }]
     },
     resolve: {

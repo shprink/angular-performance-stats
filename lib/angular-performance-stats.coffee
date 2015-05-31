@@ -1,58 +1,38 @@
-MemoryStats = require './memory-stats.js'
-Stats = require './stats.js'
+libStats = require './lib.js'
+
 RequestAnimationFrame = require 'requestanimationframe'
 
 module.exports = module = angular.module 'angular-performance-stats', []
 
 module.provider 'angularPerformanceStats', ->
     isEnabled = true
-    mode = 'row'
-    position = 'bottom right'
+    isInjected = false
 
     enable = (enable = true) ->
         isEnabled = enable
 
-    mode = (mode = null) ->
-        mode = mode if mode
-
-    position = (position = null) ->
-        position = position if position
-
-    $get = ->
+    $get = ($log, $document) ->
+        run: ->
+            return if isInjected
+            if !isEnabled
+                $log.info 'angular-performance-stats disabled'
+                return
+            require './angular-performance-stats.scss'
+            body = $document.find('body')
+            el = angular.element require './angular-performance-stats.html'
+            body.prepend el
+            libStats = new libStats()
+            update = ->
+                el.find('memory-stats').text libStats.getMemory()
+                el.find('fps-stats').text libStats.getFps().fps
+                el.find('ms-stats').text libStats.getFps().ms
+                el.find('watchers-count').text libStats.getWatcherCount() + ' Watchers'
+                RequestAnimationFrame update
+            RequestAnimationFrame update
+            isInjected = true
+            $log.info 'angular-performance-stats enabled'
         isEnabled: ->
             isEnabled
-        getMode: ->
-            mode
-        getPosition: ->
-            position
 
     enable: enable
-    position: position
-    mode: mode
     $get: $get
-
-module.directive 'angularPerformanceStats' , ->
-    restrict: 'E'
-    scope: false
-    controller: ($scope, $element, angularPerformanceStats) ->
-        if !angularPerformanceStats.isEnabled()
-            return
-        memoryStats = new MemoryStats()
-        stats = new Stats()
-        statsFPS = new Stats()
-        statsFPS.setMode 0
-        stats.setMode 1
-        $element.css
-            'zIndex': 999999
-            'position': 'fixed'
-            'right': '5px'
-            'bottom': '5px'
-        $element.append memoryStats.domElement
-        $element.append statsFPS.domElement
-        $element.append stats.domElement
-        update = ->
-            memoryStats.update()
-            stats.update()
-            statsFPS.update()
-            RequestAnimationFrame update
-        RequestAnimationFrame update

@@ -11,8 +11,17 @@ module.exports = {
     },
     module: {
         loaders: [{
+            test: /[\/]angular\.js$/,
+            loader: 'expose?angular!exports?window.angular'
+        }, {
             test: /\.coffee$/,
             loader: "coffee"
+        }, {
+            test: /\.html$/,
+            loader: "html"
+        }, {
+            test: /\.scss$/,
+            loader: "style!css!autoprefixer!sass"
         }]
     },
     plugins: [

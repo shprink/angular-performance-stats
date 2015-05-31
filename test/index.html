@@ -7,13 +7,11 @@
 
     </head>
 
-    <body>
-        <div>
-            <angular-performance-stats></angular-performance-stats>
-            {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
-            <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>
-            {% } %}
-        </div>
+    <body ng-controller="MainController" style="padding:0; margin: 0;">
+        test: {{test}}
+        {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
+        <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>
+        {% } %}
     </body>
 
 </html>
