@@ -11,6 +11,7 @@ module.provider 'angularPerformanceStats', ->
     enable = (enable = true) ->
         isEnabled = enable
 
+    ### @ngInject ###
     $get = ($log, $document) ->
         run: ->
             return if isInjected
